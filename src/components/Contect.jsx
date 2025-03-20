@@ -33,6 +33,7 @@ const Contect = () => {
           </button>
         </div>
       </motion.div>
+      <h1 className='text-amber-50 text-2xl'>work in progress of my portfolio website</h1>
     </div>
   );
 };
