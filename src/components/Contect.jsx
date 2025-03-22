@@ -4,7 +4,13 @@ import { CONTACT, CONTACT_TEXT } from '../constants';
 import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
 import emailjs from "@emailjs/browser";
 
-const Contect = () => {
+const Contact = () => {
+  
+  const sendMessage = () => {
+    alert("Message functionality is a work in progress! 🚧");
+    
+  };
+
   return (
     <div className="pb-20 flex flex-col items-center">
       <h1 className="my-10 text-center text-5xl font-bold">Get in Touch</h1>
@@ -28,14 +34,18 @@ const Contect = () => {
           <p className="flex items-center justify-center space-x-3 text-gray-900 dark:text-gray-100 text-lg">
             <FaPhoneAlt /> <span>{CONTACT.phone}</span>
           </p>
-        <button id='message' className='inline-block mt-2 rounded-lg bg-blue-600 px-5 py-2 text-white text-sm font-semibold transition-all duration-300 hover:bg-blue-700 shadow-md '>
-          Send Me Message
+          <button 
+            id='message' 
+            onClick={sendMessage}
+            className='inline-block mt-2 rounded-lg bg-blue-600 px-5 py-2 text-white text-sm font-semibold transition-all duration-300 hover:bg-blue-700 shadow-md'
+          >
+            Send Me a Message
           </button>
         </div>
       </motion.div>
-      <h1 className='text-amber-50 text-2xl'>work in progress of my portfolio website</h1>
+      <h1 className='text-amber-50 text-2xl'>Work in progress...</h1>
     </div>
   );
 };
 
-export default Contect;
+export default Contact;

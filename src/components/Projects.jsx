@@ -1,13 +1,18 @@
 import React from 'react';
 import { PROJECTS } from '../constants';
+import {motion} from "framer-motion"
 
 const Projects = () => {
   return (
     <div className=" pb-12">
       {/* Title */}
-      <h1 className="my-16 text-center text-5xl font-extrabold text-white tracking-wide">
+      <motion.h1
+      whileInView={{opacity: 1,y: 0}}
+      initial={{opacity:0,y:-100}}
+      transition={{duration:0.5 }}
+      className="my-16 text-center text-5xl font-extrabold text-white tracking-wide">
         My Projects
-      </h1>
+      </motion.h1>
 
       <div className="flex flex-wrap justify-center">
         {PROJECTS.map((project, index) => (
@@ -16,7 +21,11 @@ const Projects = () => {
             className="mb-12 flex flex-wrap items-center justify-center lg:justify-start max-w-4xl"
           >
             {/* Image Section */}
-            <div className="w-full lg:w-1/4 flex justify-center">
+            <motion.div 
+            whileInView={{opacity: 1,x: 0}}
+            initial={{opacity: 0 , x: -100}}
+            transition={{duration: 1}}
+            className="w-full lg:w-1/4 flex justify-center">
               <img
                 src={project.image}
                 width={300}
@@ -24,10 +33,14 @@ const Projects = () => {
                 alt={project.title}
                 className="mb-6 rounded-lg shadow-lg transition-transform duration-300 hover:scale-105"
               />
-            </div>
+            </motion.div>
 
             {/* Text Section */}
-            <div className="w-full max-w-xl lg:w-3/4 lg:pl-8 text-center lg:text-left">
+            <motion.div 
+             whileInView={{opacity: 1,x: 0}}
+             initial={{opacity: 0 , x: 100}}
+             transition={{duration: 1.3}}
+            className="w-full max-w-xl lg:w-3/4 lg:pl-8 text-center lg:text-left">
               <h4 className="mb-2 text-2xl font-bold text-white">{project.title}</h4>
               <p className="mb-4 text-neutral-400 leading-relaxed">{project.description}</p>
 
@@ -52,7 +65,7 @@ const Projects = () => {
               >
                 🔗 View Project
               </a>
-            </div>
+            </motion.div>
           </div>
         ))}
       </div>
