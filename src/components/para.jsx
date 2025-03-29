@@ -41,6 +41,13 @@ const Para = () => {
        className="text-gray-300 text-lg sm:text-xl lg:text-xl font-light leading-relaxed font-serif">
           {PARA_CONTENT}
         </motion.p>
+        <a href="/Swayam-Sood-Resume.pdf" download="My_Resume.pdf">
+        <button
+         className="inline-block mt-2 rounded-lg bg-blue-600/20 px-5 py-2 text-white text-sm font-semibold transition-all duration-300 hover:bg-blue-700 shadow-md"
+         >
+            Resume
+        </button>
+        </a>
       </div>
 
       {/* Right Side - Profile Image */}
