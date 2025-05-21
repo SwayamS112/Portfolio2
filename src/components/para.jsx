@@ -13,7 +13,7 @@ const container = (delay) =>({
 
 const Para = () => {
   return (
-    <div className="pb-10 lg:mb-16 flex flex-col items-center text-center lg:text-left lg:flex-row">
+    <div className="pt-20 pb-8 lg:mb-16 flex flex-col items-center text-center lg:text-left lg:flex-row">
       {/* Left Side - Text Content */}
       <div className="w-full lg:w-1/2 flex flex-col items-center lg:items-start px-6 sm:px-10 lg:px-16">
   

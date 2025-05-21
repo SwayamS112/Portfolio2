@@ -1,114 +1,70 @@
 import React from 'react';
-import {RiReactjsLine } from "react-icons/ri";
-import { SiMongodb } from 'react-icons/si';
+import { RiReactjsLine, RiGithubFill } from "react-icons/ri";
+import { SiMongodb, SiTailwindcss, SiTypescript } from 'react-icons/si';
 import { DiBootstrap, DiJavascript1 } from 'react-icons/di';
-import { SiTailwindcss } from 'react-icons/si';
 import { FaNode } from 'react-icons/fa';
-import { SiTypescript } from 'react-icons/si';
-import {animate, motion} from "framer-motion";
-import { RiGithubFill } from 'react-icons/ri';
+import { motion } from "framer-motion";
 
-const iconVariants = (duration) =>({
-  initial: {y: -10},
+const techs = [
+  { name: "React", icon: <RiReactjsLine className="text-cyan-400" /> },
+  { name: "MongoDB", icon: <SiMongodb className="text-green-500" /> },
+  { name: "JavaScript", icon: <DiJavascript1 className="text-amber-300" /> },
+  { name: "TailwindCSS", icon: <SiTailwindcss className="text-blue-400" /> },
+  { name: "TypeScript", icon: <SiTypescript className="text-blue-500" /> },
+  { name: "Node.js", icon: <FaNode className="text-green-500" /> },
+  { name: "Bootstrap", icon: <DiBootstrap className="text-purple-500" /> },
+  { name: "GitHub", icon: <RiGithubFill className="text-white" /> },
+];
+
+const iconVariants = (duration) => ({
+  initial: { y: 0 },
   animate: {
-    y: [10,-10],
+    y: [0, -15, 0],
     transition: {
-      duration: duration,
-      ease: "linear",
+      duration,
+      ease: "easeInOut",
       repeat: Infinity,
-      repeatType: "reverse"
-    }
-  }
-})
+    },
+  },
+});
+
 const Tech = () => {
   return (
-    <>
-      <div className=' pb-40 pt-10'>
-        {/* Title */}
-        <motion.h1 
-        whileInView={{opacity:1, y:0}}
-        initial={{opacity:0, y:-100}}
-        transition={{duration:1.3}}
-        className='my-20 text-center text-5xl font-bold'>
-          Technologies
-        </motion.h1>
+    <div className="pb-32 pt-10">
+      {/* Title */}
+      <motion.h1
+        whileInView={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: -100 }}
+        transition={{ duration: 1.3 }}
+        className="my-20 text-center text-5xl font-bold text-white"
+      >
+        Technologies
+      </motion.h1>
 
-        {/* Tech Icons */}
-        <motion.div 
-        whileInView={{opacity: 1, x: 0}}
-        initial={{opacity:0, x:-100}}
-        transition={{duration: 1.3}}
-        className='flex flex-wrap items-center justify-center gap-6'>
-        
-          <motion.div 
-          variants={iconVariants(2)}
-          initial="initial"
-          animate="animate"
-          className='rounded-2xl border-4 border-neutral-900 p-6 bg-neutral-900/50 shadow-lg'>
-            <RiReactjsLine className="text-6xl text-cyan-400" />
+      {/* Tech Icons */}
+      <motion.div
+        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ opacity: 0, x: -100 }}
+        transition={{ duration: 1.3 }}
+        className="flex flex-wrap items-center justify-center gap-8"
+      >
+        {techs.map((tech, index) => (
+          <motion.div
+            key={tech.name}
+            variants={iconVariants(2 + index * 0.2)}
+            initial="initial"
+            animate="animate"
+            className="relative group rounded-2xl border-4 border-neutral-900 p-6 bg-neutral-900/50 shadow-lg cursor-pointer transition-transform hover:scale-110"
+          >
+            <div className="text-6xl">{tech.icon}</div>
+            {/* Hover Label */}
+            <div className="absolute bottom-[-2.5rem] left-1/2 -translate-x-1/2 scale-0 group-hover:scale-100 transition-all duration-300 bg-neutral-800 text-white text-sm px-3 py-1 rounded-lg shadow-md z-10">
+              {tech.name}
+            </div>
           </motion.div>
-          
-          <motion.div 
-          variants={iconVariants(3)}
-          initial="initial"
-          animate="animate"
-          className='rounded-2xl border-4 border-neutral-900 p-6 bg-neutral-900/50 shadow-lg'>
-            <SiMongodb className="text-6xl text-green-500" />
-          </motion.div>
-         
-          <motion.div 
-          variants={iconVariants(4)}
-          initial="initial"
-          animate="animate"
-          className='rounded-2xl border-4 border-neutral-900 p-6 bg-neutral-900/50 shadow-lg'>
-            <DiJavascript1 className="text-6xl text-amber-300" />
-          </motion.div>
-         
-          <motion.div 
-          variants={iconVariants(5)}
-          initial="initial"
-          animate="animate"
-          className='rounded-2xl border-4 border-neutral-900 p-6 bg-neutral-900/50 shadow-lg'>
-            <SiTailwindcss className="text-6xl text-blue-400 " />
-          </motion.div>
-
-             <motion.div 
-          variants={iconVariants(6)}
-          initial="initial"
-          animate="animate"
-          className='rounded-2xl border-4 border-neutral-900 p-6 bg-neutral-900/50 shadow-lg '>
-            <SiTypescript className="text-6xl text-blue-500" />
-          </motion.div>
-          
-          <motion.div 
-          variants={iconVariants(7)}
-          initial="initial"
-          animate="animate"
-          className='rounded-2xl border-4 border-neutral-900 p-6 bg-neutral-900/50 shadow-lg'>
-            <FaNode className="text-6xl text-green-500 " />
-          </motion.div>
-         
-          <motion.div 
-          variants={iconVariants(8)}
-          initial="initial"
-          animate="animate"
-          className='rounded-2xl border-4 border-neutral-900 p-6 bg-neutral-900/50 shadow-lg'>
-            <DiBootstrap className="text-6xl text-green-500 " />
-          </motion.div>
-
-          <motion.div 
-          variants={iconVariants(9)}
-          initial="initial"
-          animate="animate"
-          className='rounded-2xl border-4 border-neutral-900 p-6 bg-neutral-900/50 shadow-lg'>
-            <RiGithubFill className="text-6xl text-green-500 " />
-          </motion.div>
-
-       
-        
-        </motion.div>
-      </div>
-    </>
+        ))}
+      </motion.div>
+    </div>
   );
 };
 

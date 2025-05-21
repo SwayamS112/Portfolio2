@@ -9,6 +9,15 @@ export const PARA_CONTENT = `Passionate about building efficient, scalable appli
 
 export const CONTACT_TEXT = "I'm always open to discussions, collaborations, and exciting projects. Feel free to drop me a message!";
 
+export const SEND_MESSAGE = () => {
+  const phoneNumber = '9418473400'; 
+  const message = 'Hi! I came from your portfolio.';
+  const encodedMessage = encodeURIComponent(message);
+  const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+  window.open(url, '_blank');
+};
+
 export const PROJECTS = [
   {
     title: "Event Stalker",

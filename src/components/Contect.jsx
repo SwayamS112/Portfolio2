@@ -1,8 +1,6 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { CONTACT, CONTACT_TEXT } from '../constants';
-import { FaEnvelope, FaPhoneAlt } from 'react-icons/fa';
-import emailjs from "@emailjs/browser";
+import { CONTACT, CONTACT_TEXT, SEND_MESSAGE } from '../constants';
+import { FaEnvelope } from 'react-icons/fa';
 
 const Contact = () => {
   
@@ -31,19 +29,14 @@ const Contact = () => {
           >
             <FaEnvelope /> <span>{CONTACT.email}</span>
           </a>
-          <p className="flex items-center justify-center space-x-3 text-gray-900 dark:text-gray-100 text-lg">
-            <FaPhoneAlt /> <span>{CONTACT.phone}</span>
-          </p>
-          <button 
-            id='message' 
-            onClick={sendMessage}
-            className='inline-block mt-2 rounded-lg bg-blue-600 px-5 py-2 text-white text-sm font-semibold transition-all duration-300 hover:bg-blue-700 shadow-md'
-          >
-            Send Me a Message
-          </button>
-        </div>
+        <button 
+         id='message' 
+         onClick={SEND_MESSAGE}
+         className='inline-block mt-2 rounded-lg bg-blue-600 px-5 py-2 text-white text-sm font-semibold transition-all duration-300 hover:bg-blue-700 shadow-md'>
+         Send Me a Message
+        </button>
+     </div>
       </motion.div>
-      <h1 className='text-amber-50 text-2xl'>Work in progress...</h1>
     </div>
   );
 };
