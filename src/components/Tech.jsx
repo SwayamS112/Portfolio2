@@ -1,11 +1,12 @@
 import React from 'react';
 import {RiReactjsLine } from "react-icons/ri";
 import { SiMongodb } from 'react-icons/si';
-import { DiJavascript1 } from 'react-icons/di';
+import { DiBootstrap, DiJavascript1 } from 'react-icons/di';
 import { SiTailwindcss } from 'react-icons/si';
 import { FaNode } from 'react-icons/fa';
 import { SiTypescript } from 'react-icons/si';
-import {animate, motion} from "framer-motion"
+import {animate, motion} from "framer-motion";
+import { RiGithubFill } from 'react-icons/ri';
 
 const iconVariants = (duration) =>({
   initial: {y: -10},
@@ -70,9 +71,17 @@ const Tech = () => {
           className='rounded-2xl border-4 border-neutral-900 p-6 bg-neutral-900/50 shadow-lg'>
             <SiTailwindcss className="text-6xl text-blue-400 " />
           </motion.div>
+
+             <motion.div 
+          variants={iconVariants(6)}
+          initial="initial"
+          animate="animate"
+          className='rounded-2xl border-4 border-neutral-900 p-6 bg-neutral-900/50 shadow-lg '>
+            <SiTypescript className="text-6xl text-blue-500" />
+          </motion.div>
           
           <motion.div 
-          variants={iconVariants(6)}
+          variants={iconVariants(7)}
           initial="initial"
           animate="animate"
           className='rounded-2xl border-4 border-neutral-900 p-6 bg-neutral-900/50 shadow-lg'>
@@ -80,12 +89,22 @@ const Tech = () => {
           </motion.div>
          
           <motion.div 
-          variants={iconVariants(7)}
+          variants={iconVariants(8)}
           initial="initial"
           animate="animate"
-          className='rounded-2xl border-4 border-neutral-900 p-6 bg-neutral-900/50 shadow-lg '>
-            <SiTypescript className="text-6xl text-blue-500" />
+          className='rounded-2xl border-4 border-neutral-900 p-6 bg-neutral-900/50 shadow-lg'>
+            <DiBootstrap className="text-6xl text-green-500 " />
           </motion.div>
+
+          <motion.div 
+          variants={iconVariants(9)}
+          initial="initial"
+          animate="animate"
+          className='rounded-2xl border-4 border-neutral-900 p-6 bg-neutral-900/50 shadow-lg'>
+            <RiGithubFill className="text-6xl text-green-500 " />
+          </motion.div>
+
+       
         
         </motion.div>
       </div>
