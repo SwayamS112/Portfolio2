@@ -31,7 +31,7 @@ export const PROJECTS = [
     image: project3,
     description:
       "An AI-driven system that classifies expenses based on keywords and categories for better financial tracking.",
-    technologies: ["Node.js", "MongoDB", "AI-based Classification"],
+    technologies: ["Node.js", "MongoDB", "ReactJS","TailwindCSS","JavaScript","Express"],
   },
   {
     title: "Quick Search",

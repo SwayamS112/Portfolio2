@@ -57,14 +57,14 @@ const Projects = () => {
               </div>
 
               {/* Button */}
-              <a
+              {/* <a
                 href={project.link}
                 target="_blank"
                 rel=""
                 className="inline-block mt-2 rounded-lg bg-blue-600 px-5 py-2 text-white text-sm font-semibold transition-all duration-300 hover:bg-blue-700 shadow-md"
               >
                 🔗 View Project
-              </a>
+              </a> */}
             </motion.div>
           </div>
         ))}
