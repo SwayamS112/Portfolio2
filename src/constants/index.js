@@ -27,7 +27,7 @@ export const PROJECTS = [
     technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "MongoDB"],
   },
   {
-    title: "AI Expense Categorization",
+    title: "Spend-Sense",
     image: project3,
     description:
       "An AI-driven system that classifies expenses based on keywords and categories for better financial tracking.",
